@@ -1,3 +1,5 @@
+open JsComponent;
+
 [%bs.raw {|require('./App.css')|}];
 
 type state = {
@@ -16,7 +18,7 @@ type action =
 
 let component = ReasonReact.reducerComponent("App");
 
-let make = (~someText, ~texts: reasonTexts, _children) => {
+let make = (~someText, ~texts, ~jsComponentTexts, _children) => {
   ...component,
 
   initialState: () => {isLoading: false, content: ""},
@@ -32,7 +34,7 @@ let make = (~someText, ~texts: reasonTexts, _children) => {
         <div> {ReasonReact.string(someText)} </div>
         <button> {ReasonReact.string(texts.ok)} </button>
         <button> {ReasonReact.string(texts.cancel)} </button>
-        <JsComponent someNumber=12 someBool=false />
+        <JsComponent someNumber=12 someBool=false texts=jsComponentTexts />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -57,6 +59,7 @@ type texts = {
 type jsProps = {
   someText: string,
   texts,
+  jsComponentTexts,
 };
 
 let default =
@@ -67,6 +70,7 @@ let default =
       make(
         ~someText=jsProps->someTextGet,
         ~texts={ok: jsTexts->okGet, cancel: jsTexts->cancelGet},
+        ~jsComponentTexts=jsProps->jsComponentTextsGet,
         [||],
       );
     },

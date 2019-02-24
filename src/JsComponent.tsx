@@ -3,19 +3,19 @@ import * as React from "react";
 export type Props = {
   someNumber: number;
   someBool: boolean;
-  // texts: JsComponentTexts;
+  texts: JsComponentTexts;
 };
 
-// export type JsComponentTexts = {
-//   NumberLabel: string;
-//   BoolLabel: string;
-// };
+export type JsComponentTexts = {
+  NumberLabel: string;
+  BoolLabel: string;
+};
 
 const JsComponent: React.FunctionComponent<Props> = props => (
   <>
-    {/* <label>{props.texts.NumberLabel}</label> */}
+    <label>{props.texts.NumberLabel}</label>
     <span>{props.someNumber}</span>
-    {/* <label>{props.texts.BoolLabel}</label> */}
+    <label>{props.texts.BoolLabel}</label>
     <span>{props.someBool.toString()}</span>
   </>
 );

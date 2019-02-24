@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App.bs";
 import * as serviceWorker from "./serviceWorker";
+import { JsComponentTexts } from "./JsComponent";
 
 type Texts = {
   Ok: string;
@@ -14,8 +15,17 @@ const texts: Texts = {
   Cancel: "Cancel"
 };
 
+const jsComponentTexts: JsComponentTexts = {
+  NumberLabel: "The number value is:",
+  BoolLabel: "The bool value is:"
+};
+
 ReactDOM.render(
-  <App someText="Some Text" texts={texts} />,
+  <App
+    someText="Some Text"
+    texts={texts}
+    jsComponentTexts={jsComponentTexts}
+  />,
   document.getElementById("root")
 );
 
