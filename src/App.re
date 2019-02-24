@@ -47,7 +47,9 @@ let make = (~someText, ~texts: reasonTexts, _children) => {
 
 [@bs.deriving abstract]
 type texts = {
+  [@bs.as "Ok"]
   ok: string,
+  [@bs.as "Cancel"]
   cancel: string,
 };
 

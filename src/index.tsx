@@ -5,13 +5,13 @@ import App from "./App.bs";
 import * as serviceWorker from "./serviceWorker";
 
 type Texts = {
-  ok: string;
-  cancel: string;
+  Ok: string;
+  Cancel: string;
 };
 
 const texts: Texts = {
-  ok: "Ok",
-  cancel: "Cancel"
+  Ok: "Ok",
+  Cancel: "Cancel"
 };
 
 ReactDOM.render(
