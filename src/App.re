@@ -5,13 +5,18 @@ type state = {
   content: string,
 };
 
+type reasonTexts = {
+  ok: string,
+  cancel: string,
+};
+
 type action =
   | LoadingStart
   | Loaded(string);
 
 let component = ReasonReact.reducerComponent("App");
 
-let make = (~someText, _children) => {
+let make = (~someText, ~texts: reasonTexts, _children) => {
   ...component,
 
   initialState: () => {isLoading: false, content: ""},
@@ -25,6 +30,8 @@ let make = (~someText, _children) => {
     <div className="App">
       <header className="App-header">
         <div> {ReasonReact.string(someText)} </div>
+        <button> {ReasonReact.string(texts.ok)} </button>
+        <button> {ReasonReact.string(texts.cancel)} </button>
         <JsComponent someProp="Some other text" />
         <a
           className="App-link"
@@ -39,9 +46,26 @@ let make = (~someText, _children) => {
 };
 
 [@bs.deriving abstract]
-type jsProps = {someText: string};
+type texts = {
+  ok: string,
+  cancel: string,
+};
+
+[@bs.deriving abstract]
+type jsProps = {
+  someText: string,
+  texts,
+};
 
 let default =
-  ReasonReact.wrapReasonForJs(~component, jsProps =>
-    make(~someText=jsProps->someTextGet, [||])
+  ReasonReact.wrapReasonForJs(
+    ~component,
+    jsProps => {
+      let jsTexts = jsProps->textsGet;
+      make(
+        ~someText=jsProps->someTextGet,
+        ~texts={ok: jsTexts->okGet, cancel: jsTexts->cancelGet},
+        [||],
+      );
+    },
   );
