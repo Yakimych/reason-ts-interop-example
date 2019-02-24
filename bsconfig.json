@@ -1,0 +1,23 @@
+{
+  "name": "reason-interop",
+  "reason": {
+    "react-jsx": 2
+  },
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "bs-dev-dependencies": [],
+  "package-specs": [
+    {
+      "module": "es6-global",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "namespace": true,
+  "bs-dependencies": ["reason-react"],
+  "refmt": 3
+}

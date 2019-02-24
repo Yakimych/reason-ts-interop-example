@@ -10,6 +10,12 @@
 
 # production
 /build
+/lib
+
+# reason
+.bsb.lock
+.merlin
+/**/*.bs.js
 
 # misc
 .DS_Store
