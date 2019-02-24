@@ -32,7 +32,7 @@ let make = (~someText, ~texts: reasonTexts, _children) => {
         <div> {ReasonReact.string(someText)} </div>
         <button> {ReasonReact.string(texts.ok)} </button>
         <button> {ReasonReact.string(texts.cancel)} </button>
-        <JsComponent someProp="Some other text" />
+        <JsComponent someNumber=12 someBool=false />
         <a
           className="App-link"
           href="https://reactjs.org"
