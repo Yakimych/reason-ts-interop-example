@@ -25,6 +25,7 @@ let make = (~someText, _children) => {
     <div className="App">
       <header className="App-header">
         <div> {ReasonReact.string(someText)} </div>
+        <JsComponent someProp="Some other text" />
         <a
           className="App-link"
           href="https://reactjs.org"
