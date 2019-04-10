@@ -35,13 +35,6 @@ let make = (~someText, ~texts, ~jsComponentTexts, _children) => {
         <button> {ReasonReact.string(texts.ok)} </button>
         <button> {ReasonReact.string(texts.cancel)} </button>
         <JsComponent someNumber=12 someBool=false texts=jsComponentTexts />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          {ReasonReact.string("Learn React")}
-        </a>
       </header>
     </div>;
   },

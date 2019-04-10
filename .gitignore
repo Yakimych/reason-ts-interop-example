@@ -17,6 +17,9 @@
 .merlin
 /**/*.bs.js
 
+# genType
+/**/*.gen.ts*
+
 # misc
 .DS_Store
 .env.local
