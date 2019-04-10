@@ -34,6 +34,7 @@ const JsComponent: React.FunctionComponent<Props> = props => {
         <div>{user.id}</div>
         <div>{user.name}</div>
         <div>{user.birthday.toISOString()}</div>
+        <div>{user.momentDate.toISOString()}</div>
       </div>
     </>
   );
