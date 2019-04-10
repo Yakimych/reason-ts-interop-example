@@ -9,8 +9,8 @@
     "@types/react-dom": "16.8.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5",
-    "typescript": "3.3.3333"
+    "react-scripts": "^2.1.8",
+    "typescript": "^3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,7 +30,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "bs-platform": "^4.0.18",
-    "reason-react": "^0.5.3"
+    "bs-platform": "^5.0.1",
+    "gentype": "^2.19.0",
+    "reason-react": "^0.6.0"
   }
 }
